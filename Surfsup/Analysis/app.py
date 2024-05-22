@@ -131,12 +131,7 @@ def statend(start, end=None):
     ).filter(Measurement.date>=start_date).filter(Measurement.date<=end_date).all()
   
     startend_temp_list = list(np.ravel(temperatures))
-    # Convert the query result to a dictionary
-    # startend_temp_list = {
-    #     "TMIN": temperatures[0],
-    #     "TAVG": temperatures[1],
-    #     "TMAX": temperatures[2],
-    # }
+    
     return jsonify(startend_temp_list)
 
     
